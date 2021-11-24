@@ -12,18 +12,18 @@
 
 theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "White Rabbit"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Logan Peterson"
+description              : "Blog site educating the masses about cybersecurity and ethical hacking"
+url                      : "https://lvpeterson.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "lvpeterson/lvpeterson.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -59,7 +59,7 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
@@ -79,7 +79,7 @@ baidu_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : "lvpeterson"
 facebook:
   username               :
   app_id                 :
@@ -91,6 +91,8 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://twitter.com/lvpeterson"
+    - "https://www.linkedin.com/in/logan-peterson-aa259259/"
 
 # Analytics
 analytics:
@@ -102,10 +104,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Logan Peterson"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "Seasoned Pentester of Things, Tinkerer, and Mentor"
+  location         : "Los Angeles, CA"
   email            :
   links:
     - label: "Email"
@@ -116,13 +118,13 @@ author:
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/lvpeterson"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/lvpeterson"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
