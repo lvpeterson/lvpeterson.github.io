@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Logan Peterson"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/IMG_2183.jpg"
   bio              : "Seasoned Pentester of Things, Tinkerer, and Mentor"
   location         : "Los Angeles, CA"
   email            :
@@ -286,7 +286,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: # true
       read_time: true
       comments: # true
       share: true
