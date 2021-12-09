@@ -1,7 +1,5 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/index.html
   - title: "Blog"
@@ -10,3 +8,41 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+attackseries:
+  - title: "Mitre ATT&CK Series"
+    children:
+      - title: "1. Reconnaissance"
+        url:
+      - title: "Resource Development"
+        url:
+      - title: "Initial Access"
+        url:
+      - title: "Execution"
+        url:
+      - title: "Persistence"
+        url:
+      - title: "Privilege Escalation"
+        url:
+      - title: "Defense Evasion"
+        url:
+      - title: "Credential Access"
+        url:
+      - title: "Discovery"
+        url: 
+      - title: "Lateral Movement"
+        url:
+      - title: "Collection"
+        url:
+      - title: "Command and Control"
+        url:
+      - title: "Exfiltration"
+        url: 
+      - title: "Impact"
+        url:
+
+credaccess:
+  - title: "Credential Access"
+    children:
+      - title: "OS Credential Dumping: LSA Secrets"
+        url: /credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets
