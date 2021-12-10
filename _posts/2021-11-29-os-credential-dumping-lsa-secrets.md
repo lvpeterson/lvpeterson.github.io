@@ -6,6 +6,7 @@ categories: CredentialAccess CredentialDumping
 sidebar:
     nav: "credaccess"
 toc: true
+
 ---
 
 # Introduction
@@ -21,7 +22,9 @@ Secrets Dump:
 secretsdump.py 
 {% endhighlight %}
 
-
 # How This Works
+
+
 # References & Links
 1. [https://attack.mitre.org/techniques/T1003/004/](https://attack.mitre.org/techniques/T1003/004/)
+2. [https://www.sentinelone.com/blog/windows-security-essentials-preventing-4-common-methods-of-credentials-exfiltration/](https://www.sentinelone.com/blog/windows-security-essentials-preventing-4-common-methods-of-credentials-exfiltration/)
