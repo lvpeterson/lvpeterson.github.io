@@ -88,9 +88,14 @@ body {
 }
 
 .page__content {
-  h2 {
+  h1 {
+    font-size: 1em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
+  }
+
+  h2 {
+    font-size: .8em;
   }
 
 	h1, h2, h3, h4, h5, h6 {
@@ -108,7 +113,7 @@ body {
 		&:hover .header-link {
 			opacity: 1;
 		}
-    font-size: 1em;
+
 	}
 
   p,
