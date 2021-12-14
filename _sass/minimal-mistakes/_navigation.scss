@@ -514,7 +514,7 @@
 
   .nav__title {
     color: #fff;
-    font-size: $type-size-6;
+    font-size: $type-size-6; 
     background: $primary-color;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -534,7 +534,7 @@
   font-size: $type-size-6;
 
   @include breakpoint($large) {
-    font-size: $type-size-7;
+    font-size: $type-size-5; // change this for ToC font size :)
   }
 
   a {
